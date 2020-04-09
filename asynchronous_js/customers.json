@@ -1,0 +1,21 @@
+
+[
+    {
+        "id": 1,
+        "name": "Raman",
+        "company": "back security",
+        "phone": "333-444-8584"
+    },
+    {
+        "id": 1,
+        "name": "Rajan",
+        "company": "green land",
+        "phone": "333-444-8584"
+    },
+    {
+        "id": 1,
+        "name": "Krishnan",
+        "company": "X corpoation",
+        "phone": "333-444-8584"
+    }
+]

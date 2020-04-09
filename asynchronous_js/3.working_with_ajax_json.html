@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <button id="btn1">Get Customer</button>
+        <button id="btn2">Get Customers</button>
+
+        <br><br>
+
+        <h1>Customer</h1>
+        <div id="cust"></div>
+
+        <h1>Customers</h1>
+        <div id="custs"></div>
+    </div>
+
+    <script>
+    
+        //let's create eventListener for buttons
+        document.getElementById('btn1').addEventListener('click', loadCustomer)
+
+        document.getElementById('btn2').addEventListener('click', loadCustomers)
+
+        function loadCustomer(e){
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET', 'customer.json', true);
+
+            xhr.onload = function(){
+
+                if(this.status === 200){
+
+                    // console.loadCustomer(this.responseText);
+
+                    const custm = JSON.parse(this.responseText);
+
+                    const output = `
+                    
+                    <ul>
+                        <li>ID: ${custm.id}</li>
+                        <li>ID: ${custm.name}</li>
+                        <li>ID: ${custm.company}</li>
+                        <li>ID: ${custm.phone}</li>
+                    </ul>`;
+
+                    document.getElementById('cust').innerHTML = output;
+                }
+
+            }
+
+            xhr.send();
+        }
+
+
+        function loadCustomers(e){
+            
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET', 'customers.json', true);
+
+                xhr.onload = function(){
+
+                    if(this.status === 200){
+
+                        // console.loadCustomer(this.responseText);
+
+                        const custms = JSON.parse(this.responseText);
+
+                        let output=''; 
+
+                        custms.forEach(function(c){
+
+                            output += `
+                        
+                                    <ul>
+                                        <li>ID: ${c.id}</li>
+                                        <li>ID: ${c.name}</li>
+                                        <li>ID: ${c.company}</li>
+                                        <li>ID: ${c.phone}</li>
+                                    </ul>`;
+
+
+
+                            
+                        });
+
+                       
+
+                        document.getElementById('custs').innerHTML = output;
+                    }
+
+            }
+
+xhr.send();
+}
+
+    </script>
+    
+</body>
+</html>
