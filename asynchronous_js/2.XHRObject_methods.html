@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <button id="my-btn">Get Data</button>
+    </div>
+
+    <div id="my-div"></div>
+    
+    <script>
+
+        document.getElementById('my-btn').addEventListener('click', loadData);
+
+        function loadData(){
+            //create XHR object
+            const xhr = new XMLHttpRequest();
+
+            //this object has some properties and methods associate with it.
+            // Open :- in this we'll specifie type of request we wanna make and URL or location of file.
+
+            xhr.open('GET', 'text.txt', true);
+
+            //this optional 
+            // 3: processing req. when req benn proessing u can have some loader or animation for that it can be use. 3 means req. is being process. 
+            xhr.onprogress = function(){
+                console.log('Readystate', xhr.readyState);
+            }
+
+            xhr.onload = function(){
+
+                console.log('Readystate', xhr.readyState);
+
+                //first chacke status is it ok or not
+                if(this.status === 200){
+
+                    //this.responseText will all data of file 
+                    console.log(this.responseText);
+
+                    document.getElementById('my-div').innerHTML = `<h3>${ this.responseText}</h3>`;
+                }
+            } 
+
+
+            //for handling error
+            xhr.onerror = function(){
+                console.log('Req erro...');
+            }
+
+            xhr.send();
+
+            /*  readyState Values
+                0: req. not initialized
+                1: server connection established
+                2: req. rceived
+                3: processing req.
+                4: req. finished and respo. is ready
+            */
+
+        }
+
+
+
+        //http status codes
+        // 200 : "ok"
+        // 403 : "Forbidden"
+        // 404 : "Not Found"
+    </script>
+
+</body>
+</html>

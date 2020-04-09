@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration Section</title>
+</head>
+<body>
+    
+    <script>
+
+        for(var i=0; i<10; i++){
+            if(i===2){
+                console.log(`${i} is my fevorite on, so let\'s continue...`);
+                continue;
+            }
+            
+            if(i==7){
+                console.log('Sorry we need to stop here.');
+                break;
+            }
+
+            console.log(i)
+
+            
+        }
+
+        const names = ['yudhister', 'arjun', 'duryodhan', 'shihkandini', 'bhim'];
+
+        for (let i = 0; i < names.length; i++) {
+            console.log(names[i]);
+        }
+
+        //using for each loop
+        //forEach loop takes anonymous func as parameter
+        names.forEach(function(name){
+
+            console.log(name);
+        });
+
+        // forEach takes anonymous func as parameter and that fun takes 3 parameter 1st is ierator variable like python 2nd para is index 3rd is whole array u have defined
+
+        names.forEach(function(name, index, array){
+
+            console.log(`${index} : ${name}`);
+            console.log(array);
+        });
+
+        // MAP this is func. iterator automatically
+        const users = [
+            {id: 1, name: 'baban'},
+            {id: 2, name: 'ramu'},
+            {id: 1, name: 'ganu'},
+            {id: 2, name: 'damu'}
+        ];
+
+        const ids = users.map(function(user){
+
+            return user.id;
+
+        })
+
+        console.log(ids)
+
+
+        // for in loop which is often used for objects
+
+        const user = {
+            name: 'damodhar',
+            work: 'sware developer',
+            age: 30
+        }
+
+        for(let i in user){
+                // console.log(i);// it will just give key part
+                console.log(`${i} : ${user[i]}`);
+        }
+    </script>
+</body>
+</html>

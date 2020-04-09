@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototypes</title>
+</head>
+<body>
+    
+    <script>
+        //prototypes is a object first of all, each object has this prototype object
+
+        function Person(firstName, lastName, dob){
+            
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.birthday = new Date(dob)
+          
+        }
+
+        // this is using prototypr object this was  function were same computation for any object so we have done it with prototype object 
+        Person.prototype.calculateAge = function(){
+            const diff = Date.now() - this.birthday.getTime();
+            const ageDate = new Date(diff);
+
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+
+        }
+
+        const obj1 = Person("kanad", 'maharshi', '10-10-1800');
+        const obj2 = Person("raman", 'maharshi', '10-1-1800');
+
+        console.log(obj1);
+        // console.log(obj1.calculateAge());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Single Elemet Selector</title>
+</head>
+<body>
+    
+    <div class="my-div">
+
+        <ul class="my-ul" id="li-item">
+            <li class="my-item">Modiji</li>
+            <li class="my-item" id="my-item2">Amitji</li>
+            <li class="my-item" id="my-item3">Yogiji</li>
+            <li class="my-item" id="my-item4">Rajnathji</li>
+        </ul>
+
+    </div>
+
+    <script>
+        
+        // document.getElementById()
+
+        // console.log(document.getElementById('li-item'));
+        // console.log(document.getElementById('li-item').id);
+        // console.log(document.getElementById('li-item').className);
+
+        // //changing style
+        // document.getElementById('li-item').style.background = 'black';
+        // document.getElementById('li-item').style.color = 'white';
+        // document.getElementById('li-item').style.padding= '5px';
+
+        // //changing contents
+        // document.getElementById('my-item4').textContent = 'Content Change';
+        // document.getElementById('my-item3').innerText = 'My text';
+        // document.getElementById('my-item2').innerHTML = '<span style="color:red;">Inner Html</span>';
+
+
+        // document.querySelector()
+        // with this only one we can select anything this much more poverfull than previous one
+
+        console.log(document.querySelector('#li-item'));
+        console.log(document.querySelector('.my-item'));
+        console.log(document.querySelector('li'));
+
+        //changing style
+        // it will one select first matching element bcoz it's single element selector
+        document.querySelector('li').style.color = 'yellow';
+
+        document.querySelector('li:last-child').style.color = 'red';
+
+        document.querySelector('li:nth-child(4)').style.color = 'green';
+
+    </script>
+</body>
+</html>

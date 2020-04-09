@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literal</title>
+</head>
+<body>
+    <h2>All About Template Literal</h2>
+    <h3>Just inspect and open console.</h3>
+
+    <script>
+        const name = "Bharadwaj";
+        const age =30;
+        const job = "software developer";
+        const city = "gudgaon";
+
+        function hello(){
+            return "kanad";
+        }
+
+        //without template string (es5)
+        html = '<ul> <li>Name:' + name + '</li> <li>Age:' + age + '</li><li>City:' + city + '</li></ul>';
+        
+        //or
+        html = '<ul>'+
+                '<li>Name:' + name + '</li>'+
+                '<li>Age:' + age + '</li>'+
+                '<li>City:' + city + '</li>'+
+                '</ul>';
+       
+    //    document.body.innerHTML = html;
+
+        //with template string (es6)
+        html = `<ul>
+                <li>Name: ${name} </li>
+                <li>Age: ${age}  </li>
+                <li>City: ${city} </li>
+                <li>City: ${2+2} </li>
+                <li>City: ${hello()} </li>
+                <li>City: ${age>50 ? 'second inning': 'first inning'} </li>
+                </ul>`;
+
+        document.body.innerHTML = html;
+            
+    </script>
+</body>
+</html>

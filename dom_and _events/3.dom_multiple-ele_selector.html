@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Multi Element Selector</title>
+</head>
+<body>
+
+    <div class="my-div">
+
+        <ul class="my-ul" id="li-item">
+            <li class="my-item">Modiji</li>
+            <li class="my-item" id="my-item2">Amitji</li>
+            <li class="my-item" id="my-item3">Yogiji</li>
+            <li class="my-item" id="my-item4">Rajnathji</li>
+        </ul>
+
+    </div>    
+
+    <script>
+        // document.getElementsByClassName()
+        // It selects group of elements by it's class names
+
+        const item = document.getElementsByClassName('my-item'); 
+        
+        console.log(item);
+        console.log(item[0]);
+
+        item[0].style.background = 'black';
+        item[0].style.color = 'white';
+
+        //changing text contents
+        item[3].textContent = "Contents has been changed";
+
+        
+        // document.getElementsByTagName()
+        let lis = document.getElementsByTagName('li');
+        
+        console.log(lis);
+
+        lis = Array.from(lis);
+
+        lis.reverse();
+
+        lis.forEach(function(li){
+
+            console.log(li.className);
+
+        });
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

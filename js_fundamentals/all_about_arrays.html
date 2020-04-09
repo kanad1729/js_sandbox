@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+<body>
+
+
+    <script>
+        let nums = [10, 30, 40, 60, 20];
+        let nums2 = [600, 120, 40, 60, 20];
+        let mixed = [10, "Bharadwaj", undefined, null, 20.20, false, {a:'ram', b:'sita'}, new Date()];
+
+        console.log(mixed);
+
+        let val;
+
+        //get array length
+        val = nums.length;
+        console.log(val);
+
+        //check if its array
+        console.log(Array.isArray(nums))
+
+        //get single element
+        console.log(nums[3]);
+
+        //inser item into array
+        nums[2] = 100; 
+
+        console.log(nums.indexOf(36));//this item isnt present so it will return -1
+
+        console.log(nums.indexOf(100));
+
+        //add to end
+        nums.push(200);
+        console.log(nums);
+
+        //add to froent
+        nums.unshift(400);
+        console.log(nums);
+
+        //take off from end
+        nums.pop();
+        console.log(nums);
+
+        //take off from froent
+        nums.shift();
+        console.log(nums);
+
+        //splice its something like slicing
+        //console.log(nums.splice(1,3));
+
+        //reverse
+        console.log(nums);
+        console.log(nums.reverse());
+
+        console.log(nums.splice(1,3));
+        console.log(nums);
+
+        //concat
+        let val2 = nums.concat(nums2);
+        console.log(val2)        
+
+        // sorting
+        console.log('Before sorting '+val2); //output=> Before sorting 20,10,600,120
+
+        val2 = nums2.sort()
+        console.log('After sorting '+val2); //After sorting 10,120,20,600 here we r getting wrong output js does sorting on just first no of digit.
+
+        //lets do the sorting correct way
+        val2 = nums2.sort(function(x, y){
+            return x-y;
+        })
+
+        console.log('After sorting '+val2); 
+
+        function over50(num){
+            return num > 50;
+        }
+        
+        val2 = nums.find(over50);
+        console.log(val2);
+    </script>
+    
+</body>
+</html>

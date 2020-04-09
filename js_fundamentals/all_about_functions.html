@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+</head>
+<body>
+    <h2>All about Functions in Js.</h2>
+
+    <script>
+        // FUNCTION DECLARATION
+        function greet(){
+            console.log('hello');
+        }
+
+        // RETURNING VALUE
+        function greet1(){
+          return 'hello, krishna';
+        }
+
+        //PASSING PARAMETERS
+
+        function greet2(fName, lName){
+          
+            return 'hello, ' + fName +' ' + lName + '';
+          
+        }
+
+        //default value
+        function greet3(fName, lName){
+            if(typeof fName === 'undefined'){fName = 'Ram'}
+            if(typeof lName === 'undefined'){lName = 'Lla'}
+          return 'hello, ' + fName +' ' + lName + '';
+        }
+
+
+        //FUNC CALLING
+
+        greet();
+
+        console.log(greet1());
+
+        console.log(greet2("Ram", 'lala'));
+
+        console.log(greet3());
+
+
+        //FUNCTION EXPRESSION OR ANONIMOUS FUNCTION OR LIKE LAMBDA FUNCTION OF PYTHON
+
+        const square = function(x=10){
+            return x*x;
+        }
+
+        console.log(square(15));
+
+
+        // IMMIDIETLY INVOKABLE FUNCTION EXPRESSION - IIFE'S
+        //IT'S ALSO CALLED SELF CALLING FUNCTION OR CALLBACK FUNC.
+        // It's function that u declare and run at same time
+        
+        //VARIATION 1
+        (function(){
+            console.log("hello, I am IIFE's");
+        })();
+
+        // VARIATION 2
+        (function(){
+            console.log("hello, I am IIFE's");
+        }());
+
+        //IIFE'S WITH PARAMETERS
+        (function(fName, lName){
+            return `I am ${fName} ${lName}`;
+        }('KRISHNA', 'VASUDEV'));
+
+        //IIFE'S WITH RETURN AND VAR ASSIGNMRNT
+        var result = (function() {
+            return "From IIFE";
+        }());
+
+        alert(result); // alerts "From IIFE"
+
+
+        // FOR WITH IIFE's 
+        (function IIFE(msg, times) {
+            for (var i = 1; i <= times; i++) {
+            console.log(msg);
+        }
+        }("Hello!", 5));
+
+
+
+
+        //PROPERTY METHOD
+        // WHENE FUNC IS PUT INSIDE OBJECT IS CALLED METHOD 
+        const todo = {
+            add: function(){
+                console.log('add todo')
+            },
+            edit: function(id){
+                console.log(`Id is ${id}`);
+            }
+        }
+
+        todo.add();
+        todo.edit(51);
+
+
+   
+    </script>
+    
+</body>
+</html>

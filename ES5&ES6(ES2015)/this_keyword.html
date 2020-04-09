@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+</head>
+<body>
+
+    <script>
+
+        //person constructor
+        //this keyword gives u current instance of an object 
+        function Person(name, dob){
+            
+            this.name = name;
+            this.birthday = new Date(dob)
+            this.calculateAge = function(){
+
+                const diff = Date.now() - this.birthday.getTime();
+                const ageDate = new Date(diff);
+
+                return Math.abs(ageDate.getUTCFullYear() - 1970);
+
+            }
+
+            // console.log(this); //it will give out as current instances 
+        }
+
+        // console.log(this); //here out will be window and its global object
+        // this.alert("hiiiii");//it will gonna execute bcoz alert is part of window object
+
+        const obj1 = new Person("Kanad", '9-10-1920');
+        // const obj2 = new Person("Agtya");
+
+         console.log(obj1);
+         console.log(obj1.calculateAge());
+        // console.log(obj2);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Mouse Event</title>
+</head>
+<body>
+
+    <div class="my-div">
+
+        <ul class="my-ul" id="li-item">
+            <li class="my-item">Modiji</li>
+            <li class="my-item" id="my-item2">Amitji</li>
+            <li class="my-item" id="my-item3">Yogiji</li>
+            <li class="my-item" id="my-item4">Rajnathji</li>
+            <li class="my-item" id="my-item5"> <a class="my-item6" href="http://google.com">Google</a> </li>
+        </ul>
+        <button class="click-btn">Click me</button>
+
+    </div>
+
+    <script>
+
+        const clickBtn = document.querySelector('.click-btn')
+
+        //click
+        // clickBtn.addEventListener('click', runEvent);
+
+        //double click
+        // clickBtn.addEventListener('dblclick', runEventDouble);
+
+        //mouse down
+        // clickBtn.addEventListener('mousedown', runEvent);
+
+        //mouse up
+        // clickBtn.addEventListener('mouseup', runEvent);
+
+        //mouse ennter
+        // clickBtn.addEventListener('mouseenter', runEvent);
+
+        //mouse leave
+        //clickBtn.addEventListener('mouseleave', runEvent);
+
+        //mouse over
+        //clickBtn.addEventListener('mouseover', runEvent);
+
+        //mouse out
+        //clickBtn.addEventListener('mouseout', runEvent);
+
+        //mouse move
+        // clickBtn.addEventListener('mousemove', runEvent);
+
+
+
+        function runEvent(e){
+            console.log(`Event Type: ${e.type}`);
+            
+        }
+
+    </script>
+    
+</body>
+</html>

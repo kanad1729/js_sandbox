@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM |Event Object and Event Listener</title>
+</head>
+<body>
+
+    <div class="my-div">
+
+        <ul class="my-ul" id="li-item">
+            <li class="my-item">Modiji</li>
+            <li class="my-item" id="my-item2">Amitji</li>
+            <li class="my-item" id="my-item3">Yogiji</li>
+            <li class="my-item" id="my-item4">Rajnathji</li>
+            <li class="my-item" id="my-item5"> <a class="my-item6" href="http://google.com">Google</a> </li>
+        </ul>
+
+    </div>    
+
+    <script>
+
+        document.querySelector('.my-item6').addEventListener('click', function(e){
+            console.log('hello hi');
+            e.preventDefault(); //just because of this func on click event we will not move to google.com we'll just get that message 
+        })
+      
+
+    </script>
+    
+</body>
+</html>

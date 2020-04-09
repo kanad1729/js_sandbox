@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview of Window Object</title>
+</head>
+<body>
+
+    <div style="margin-top: 1000px">
+    <h1>inside div </h1>
+    </div>
+
+    <script>
+        //window is global object in client side javascript
+
+        // this is outer height and outer width of whole window
+        console.log(window.outerHeight);
+        console.log(window.outerWidth);
+
+        //here we'll get inner width and height inner measn it will be from inside scroll bar actully
+        console.log(window.innerHeight);
+        console.log(window.innerWidth);
+
+        /*/ getting an scrolling values
+        // using this u can get values where u r scroll bar is no as per in both X and Y direction if no scrolling it displays 0 value
+        // it's use can be if u r designin animation for when website scrolling is being done
+        */
+        console.log(window.scrollY);
+        console.log(window.scrollX);
+
+        // location object 
+        console.log(window.location);
+        console.log(window.location.hostname);
+        console.log(window.location.port);
+        console.log(window.location.href);
+
+        // navigator Object
+        console.log(window.navigator);
+        console.log(window.navigator.appName);
+        console.log(window.navigator.appVersion);
+        console.log(window.navigator.userAgent);
+        console.log(window.navigator.platform);// to detect os
+        console.log(window.navigator.language);// can get lang of browser
+    </script>
+    
+</body>
+</html>

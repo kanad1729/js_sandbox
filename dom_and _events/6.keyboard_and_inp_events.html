@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Keyboard and Input Events</title>
+</head>
+<body>
+
+    <div class="my-div">
+        
+        <form class="my-form">
+            <h2 class="form-h2"></h2>
+            <input type="text" id="my-inp">
+            <input type="password">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.querySelector('.my-form');
+
+        const inpTask = document.querySelector('.my-inp');
+
+        const frmHeading = document.querySelector('.form-h2');
+
+        // form.addEventListener('submit', runEvent);
+
+        //key down
+        form.addEventListener('keydown', runEvent);
+
+        function runEvent(e){
+            console.log(`Event Type:  ${e.type}`);
+
+            console.log(e.target.value);
+            
+            frmHeading.innerText = e.target.value;
+            // e.preventDefault();    
+        }
+        
+    </script>
+    
+</body>
+</html>
